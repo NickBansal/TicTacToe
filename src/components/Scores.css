@@ -1,0 +1,12 @@
+.FullBox {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.PlayerScore {
+    margin: 20px 0;
+}
+
+.PlayerScore h2 {
+    margin: 0
+}
