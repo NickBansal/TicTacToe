@@ -9,9 +9,22 @@
   width: 490px;
   height: 230px;
   background: rgba(0, 0, 0, 0.9);
-  transition: 1s
+  animation: modalFade 0.5s 1 ease-in-out
 }
 
 .Winner {
   color: whitesmoke
 }
+
+@keyframes modalFade {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
