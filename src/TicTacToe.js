@@ -16,10 +16,10 @@ class App extends Component {
   }
 
   render() {
-    
+
     const winner = calculateWinner(this.state.squares)
     let playerWinner = !this.state.player1 ? 'Player 1' : 'Player 2'
-    const newText = winner ? `'${playerWinner}' is the winner!` : null
+    const newText = winner ? `'${playerWinner}' is the winner!` : `Draw`
     const style = this.state.resetGame ? { filter: 'grayscale(100%) opacity(0.2)', transition: '1s' } : null
     
     return (
@@ -30,6 +30,7 @@ class App extends Component {
           handleClick={this.handleClick}
           gameSquares={this.state.squares}/>
           <Scores 
+          resetScore={this.resetScore}
           player1Score={this.state.player1Score}
           player2Score={this.state.player2Score}
           player1={this.state.player1}/>
@@ -47,7 +48,6 @@ class App extends Component {
 
   handleClick = (index) => {
     let player1 = this.state.player1
-    let Score1, Score2
     let text = this.state.player1 ? 'X' : 'O'
     const squares = this.state.squares.map((box, i) => {
       if (i === index && box === null && !calculateWinner(this.state.squares)) {
@@ -56,26 +56,43 @@ class App extends Component {
       }
       return box 
     })
-    
-    Score1 = player1 ? 1 : 0
-    Score2 = !player1 ? 1 : 0
-
-    calculateWinner(this.state.squares) ? 
-    this.setState({
-      resetGame: true,
-      player1Score: this.state.player1Score + Score1,
-      player2Score: this.state.player2Score + Score2
-    }) : 
     this.setState({
       squares, 
       player1
     })
+    this.checkTheGameWinner(player1)
+  }
+
+  checkTheGameWinner = (player1) => {
+    let Score1, Score2
+    const newReset = this.state.squares.some(box => box === null)
+    Score1 = player1 ? 1 : 0
+    Score2 = !player1 ? 1 : 0
+    if (calculateWinner(this.state.squares)) {
+      this.setState({
+        resetGame: true,
+        player1Score: this.state.player1Score + Score1,
+        player2Score: this.state.player2Score + Score2
+      })
+    }
+    if (!newReset) {
+      this.setState({
+        resetGame: true
+      })
+    }
   }
 
   resetGame = () => {
     this.setState({
       squares: Array(9).fill(null),
       resetGame: false
+    })
+  }
+
+  resetScore = () => {
+    this.setState({
+      player1Score: 0,
+      player2Score: 0
     })
   }
 

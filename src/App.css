@@ -3,9 +3,11 @@
 }
 
 #ResetModal {
+  max-height: calc(100% - 100px);
   position: fixed;
-  top: 22%;
-  left: 29%;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 490px;
   height: 230px;
   background: rgba(0, 0, 0, 0.9);
@@ -17,12 +19,10 @@
 }
 
 @keyframes modalFade {
-  0% {
-    transform: translateY(-100%);
+  from {
     opacity: 0
   }
-  90% {
-    transform: translateY(0);
+  to {
     opacity: 1;
   }
 }
