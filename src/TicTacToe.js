@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Board from './components/Board'
 import './App.css';
 import { calculateWinner } from './utils'
-import Reset from './components/ResetGame'
 import Scores from './components/Scores'
 
 class App extends Component {
@@ -39,7 +38,7 @@ class App extends Component {
         {this.state.resetGame && 
         <div id="ResetModal">
           <h1 className="Winner">{ newText }</h1>
-          <Reset resetGame={this.resetGame}/>
+          <button onClick={() => this.resetGame()}>RESET</button>
         </div>
         }
       </div>

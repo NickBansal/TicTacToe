@@ -1,10 +1,16 @@
 # Tic Tac Toe
 This game is made fully in React as a part of a series of games I am creating for portfolio purposes.
 
-## Installing a Local Copy
-These instructions will help you to get a copy of TicTacToe up and running on your local machine for testing purposes.
+## Step-by-step
+- [x] Create a game board to show the cells
+- [x] Show if a square is selected
+- [x] Change the square to either 'X' or 'O' depending on the player
+- [x] Check to see if there is a winner 
+- [x] Restart game button when there is a winner
+- [x] Updated score 
+- [x] Reset button for the scores
 
-### Installing
+## Instructions
 Please ensure you have Node.js installed, to check if node is installed please type the follwoing into your terminal.
 ```js
 $ node -v
@@ -21,3 +27,6 @@ To start the application, run this command in the CLI:
 $ npm start
 ```
 If successful, your browser should open http://localhost:3000. Enjoy
+
+## Author
+Nick Bansal
