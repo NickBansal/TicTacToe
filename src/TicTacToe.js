@@ -17,10 +17,10 @@ class App extends Component {
 
   render() {
 
-    const winner = calculateWinner(this.state.squares)
-    let playerWinner = !this.state.player1 ? 'Player 1' : 'Player 2'
-    const newText = winner ? `'${playerWinner}' is the winner!` : `Draw`
-    const style = this.state.resetGame ? { filter: 'grayscale(100%) opacity(0.2)', transition: '1s' } : null
+    const winner = calculateWinner(this.state.squares),
+    playerWinner = !this.state.player1 ? 'Player 1' : 'Player 2',
+    newText = winner ? `'${playerWinner}' is the winner!` : `Draw`,
+    style = this.state.resetGame ? { filter: 'grayscale(100%) opacity(0.2)', transition: '1s' } : null
     
     return (
       <div className="App">
@@ -56,28 +56,22 @@ class App extends Component {
       }
       return box 
     })
+    this.checkTheGameWinner(player1, squares)
     this.setState({
       squares, 
       player1
     })
-    this.checkTheGameWinner(player1)
   }
 
-  checkTheGameWinner = (player1) => {
+  checkTheGameWinner = (player1, squares) => {
     let Score1, Score2
-    const newReset = this.state.squares.some(box => box === null)
     Score1 = player1 ? 1 : 0
     Score2 = !player1 ? 1 : 0
-    if (calculateWinner(this.state.squares)) {
+    if (calculateWinner(squares)) {
       this.setState({
         resetGame: true,
         player1Score: this.state.player1Score + Score1,
         player2Score: this.state.player2Score + Score2
-      })
-    }
-    if (!newReset) {
-      this.setState({
-        resetGame: true
       })
     }
   }

@@ -4,8 +4,8 @@ import './Scores.css'
 const Scores = ({ player1, player1Score, player2Score, resetScore }) => {
 
     const style = {
-        transform: 'scale(1.3)',
-        transition: '0.5s' 
+        transform: 'scale(1.4)',
+        transition: '1s' 
     }
 
     return (
