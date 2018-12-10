@@ -23,8 +23,6 @@ export const computerTurn = squares => {
     if (squares[randNum] === null) {
         squares[randNum] = 'O'
         return squares
-    } 
-    if (squares.some(square => square === null) && squares[randNum] !== null) {
-        return computerTurn(squares)
-    } 
+    }
+    return computerTurn(squares)
 }

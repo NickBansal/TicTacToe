@@ -7,23 +7,27 @@ class App extends Component {
 
   state = {
     squares: Array(9).fill(null),
-    resetGame: false
+    resetGame: false,
+    difficulty: 'Easy' 
   }
 
   render() {
 
     const winner = calculateWinner(this.state.squares),
-    playerWinner = winner === 'X' ? 'Player 1' : 'Computer',
-    newText = winner ? `'${playerWinner}' is the winner!` : `Draw`,
+    playerWinner = winner === 'X' ? 'You are' : 'Computer is',
+    newText = winner ? `${playerWinner} the winner!` : `Draw`,
     style = this.state.resetGame ? { filter: 'grayscale(100%) opacity(0.2)', transition: '1s' } : null
     
     return (
       <div className="App">
         <div style={style}>
           <h1>Tic Tac Toe</h1>
+          <h3 style={{ margin: '20px' }}>Difficulty: {this.state.difficulty}</h3>
           <Board 
           handleClick={this.handleClick}
           gameSquares={this.state.squares}/>
+          <button onClick={(e) => this.handleDifficulty(e.target.value)} value='Easy'>EASY</button>
+          <button onClick={(e) => this.handleDifficulty(e.target.value)} value='Hard'>HARD</button>
         </div>
         {this.state.resetGame && 
         <div id="ResetModal">
@@ -57,6 +61,13 @@ class App extends Component {
         resetGame: true,
       })
     }
+  }
+
+  handleDifficulty = event => {
+    const difficulty = event === 'Easy' ? 'Easy' : 'Hard'
+    this.setState({
+      difficulty
+    })
   }
 
   resetGame = () => {
