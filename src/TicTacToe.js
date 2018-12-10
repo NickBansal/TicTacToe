@@ -40,6 +40,7 @@ class App extends Component {
   }
 
   handleClick = (index) => {
+    const { difficulty } = this.state
     let squares = this.state.squares.map((box, i) => {
       if (i === index && box === null && !calculateWinner(this.state.squares)) {
         box = 'X'
@@ -47,8 +48,7 @@ class App extends Component {
       return box 
     })
     if (squares.some(item => item === null)) {
-      // squares = easyComputerTurn(squares)
-      squares = hardComputerTurn(squares)
+      squares = difficulty === 'Easy' ? easyComputerTurn(squares) : hardComputerTurn(squares)
     }
     this.checkTheGameWinner(squares)
     this.setState({
@@ -67,6 +67,7 @@ class App extends Component {
   handleDifficulty = event => {
     const difficulty = event === 'Easy' ? 'Easy' : 'Hard'
     this.setState({
+      squares: Array(9).fill(null),
       difficulty
     })
   }

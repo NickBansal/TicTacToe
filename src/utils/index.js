@@ -32,12 +32,10 @@ export const hardComputerTurn = squares => {
     if (squares.filter(item => item === null).length > 6) {
         if (squares[4] === null) {
             squares[4] = 'O'
-            console.log(squares)
             return squares
         } else {
             let randNum = Math.floor(Math.random() * 4)
             squares[firstChoice[randNum]] = 'O'
-            console.log(squares)
             return squares
         }
     } else {
@@ -82,11 +80,25 @@ export const hardComputerTurn = squares => {
         else if (squares[4] === squares[6] && squares[4] !== null && squares[2] === null) squares[2] = 'O'
         else if (squares[2] === squares[6] && squares[6] !== null && squares[4] === null) squares[4] = 'O'
 
+        else if (squares[0] === squares[7] && squares[0] !== null && squares[6] === null) squares[6] = 'O'
+        else if (squares[2] === squares[7] && squares[2] !== null && squares[8] === null) squares[8] = 'O'
+        else if (squares[1] === squares[8] && squares[8] !== null && squares[2] === null) squares[2] = 'O'
+        else if (squares[3] === squares[2] && squares[3] !== null && squares[0] === null) squares[0] = 'O'
+        else if (squares[0] === squares[5] && squares[0] !== null && squares[2] === null) squares[2] = 'O'
+        else if (squares[3] === squares[8] && squares[3] !== null && squares[6] === null) squares[6] = 'O'
+
         // EVERYTHING ELSE 
         else if (squares[0] === squares[8] && squares[0] !== null && squares[4] !== null && squares[5] === null) squares[5] = 'O'
         else if (squares[0] === squares[8] && squares[0] !== null && squares[4] !== null && squares[7] === null) squares[7] = 'O'
         else if (squares[2] === squares[6] && squares[2] !== null && squares[4] !== null && squares[3] === null) squares[3] = 'O'
         else if (squares[2] === squares[6] && squares[2] !== null && squares[4] !== null && squares[7] === null) squares[7] = 'O'
+        else if (squares.filter(item => item === null).length === 2 && squares[7] === null) squares[7] = 'O' 
         return squares
     }
 }
+
+
+// else if (one == nine  && one != "" && five != "" && six == ""){choice = "#mid-right"}
+//       else if (one == nine  && one != "" && five != "" && eight == ""){choice = "#bot-mid"}
+//       else if (three == seven && three != "" && five != "" && four == ""){choice = "#mid-left"}
+//       else if (three == seven && three != "" && five != "" && eight == ""){choice = "#bot-mid"} 
