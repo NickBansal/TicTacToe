@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import Board from './components/Board'
 import './App.css';
-import { calculateWinner } from './utils'
-import Scores from './components/Scores'
+import { calculateWinner, computerTurn } from './utils'
 
 class App extends Component {
 
   state = {
     squares: Array(9).fill(null),
-    player1: true,
-    resetGame: false,
-    player1Score: 0,
-    player2Score: 0
+    resetGame: false
   }
 
   render() {
 
     const winner = calculateWinner(this.state.squares),
-    playerWinner = !this.state.player1 ? 'Player 1' : 'Player 2',
+    playerWinner = winner === 'X' ? 'Player 1' : 'Computer',
     newText = winner ? `'${playerWinner}' is the winner!` : `Draw`,
     style = this.state.resetGame ? { filter: 'grayscale(100%) opacity(0.2)', transition: '1s' } : null
     
@@ -28,13 +24,7 @@ class App extends Component {
           <Board 
           handleClick={this.handleClick}
           gameSquares={this.state.squares}/>
-          <Scores 
-          resetScore={this.resetScore}
-          player1Score={this.state.player1Score}
-          player2Score={this.state.player2Score}
-          player1={this.state.player1}/>
         </div>
-
         {this.state.resetGame && 
         <div id="ResetModal">
           <h1 className="Winner">{ newText }</h1>
@@ -46,31 +36,25 @@ class App extends Component {
   }
 
   handleClick = (index) => {
-    let player1 = this.state.player1
-    let text = this.state.player1 ? 'X' : 'O'
-    const squares = this.state.squares.map((box, i) => {
+    let squares = this.state.squares.map((box, i) => {
       if (i === index && box === null && !calculateWinner(this.state.squares)) {
-        box = text
-        player1 = !player1
+        box = 'X'
       }
       return box 
     })
-    this.checkTheGameWinner(player1, squares)
+    if (squares.some(item => item === null)) {
+      squares = computerTurn(squares)
+    }
+    this.checkTheGameWinner(squares)
     this.setState({
-      squares, 
-      player1
+      squares
     })
   }
 
-  checkTheGameWinner = (player1, squares) => {
-    let Score1, Score2
-    Score1 = player1 ? 1 : 0
-    Score2 = !player1 ? 1 : 0
-    if (calculateWinner(squares)) {
+  checkTheGameWinner = (squares) => {
+    if (calculateWinner(squares) || !squares.some(item => item === null)) {
       this.setState({
         resetGame: true,
-        player1Score: this.state.player1Score + Score1,
-        player2Score: this.state.player2Score + Score2
       })
     }
   }
@@ -81,14 +65,6 @@ class App extends Component {
       resetGame: false
     })
   }
-
-  resetScore = () => {
-    this.setState({
-      player1Score: 0,
-      player2Score: 0
-    })
-  }
-
 }
 
 export default App;

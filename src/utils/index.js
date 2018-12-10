@@ -17,3 +17,14 @@ export const calculateWinner = (squares) => {
     }
     return null;
 }
+
+export const computerTurn = squares => {
+    let randNum = Math.floor(Math.random() * 9)
+    if (squares[randNum] === null) {
+        squares[randNum] = 'O'
+        return squares
+    } 
+    if (squares.some(square => square === null) && squares[randNum] !== null) {
+        return computerTurn(squares)
+    } 
+}
