@@ -2,16 +2,16 @@
     width: 400px;
     height: 400px;
     margin: 0 auto;
-    background: #34495e;
+    /* background:#66cdaa; */
     color: #fff;
-    border: 6px solid #2c3e50;
+    /* border: 6px solid #2c3e50; */
     border-radius: 10px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
 .Box {
-    border: 6px solid #2c3e50;
+    /* border: 6px solid #66cdaa; */
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
@@ -19,6 +19,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Box:nth-child(1), .Box:nth-child(2), .Box:nth-child(4), .Box:nth-child(5) {
+    border-right: 6px solid #66cdaa;
+    border-bottom: 6px solid #66cdaa;
+}
+
+.Box:nth-child(6), .Box:nth-child(3) {
+    border-bottom: 6px solid #66cdaa;
+}
+
+.Box:nth-child(7) {
+    border-right: 6px solid #66cdaa;
+}
+
+.Box:nth-child(8) {
+    border-right: 6px solid #66cdaa;
 }
 
 .Box:hover {
