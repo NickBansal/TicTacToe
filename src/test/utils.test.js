@@ -15,8 +15,10 @@ describe('Calculating a winning combination', () => {
         const array1 = ['X', null, null, 'X']
         const array2 = ['X', null, null, null]
         const array3 = ['X', 'X', 'X', 'X']
+        const array4 = [null, null, null, null]
         expect(filterXs(array1)).toBe(2)
         expect(filterXs(array2)).toBe(1)
         expect(filterXs(array3)).toBe(4)
+        expect(filterXs(array4)).toBe(0)
     })
 })
