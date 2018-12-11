@@ -1,6 +1,8 @@
 # Tic Tac Toe
 This game is made fully in React as a part of a series of games I am creating for portfolio purposes.
 
+All code was done using Javascript in Visual Studio and testing is done with Jest and Enzyme
+
 ## Step-by-step
 - [x] Create a game board to show the cells
 - [x] Show if a square is selected
