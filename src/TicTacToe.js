@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Board from './components/Board'
 import './App.css';
-import { calculateWinner, easyComputerTurn, hardComputerTurn } from './utils'
+import { calculateWinner, easyComputerTurn, hardComputerTurn, filterXs } from './utils'
 
 class App extends Component {
 
@@ -47,7 +47,7 @@ class App extends Component {
       }
       return box 
     })
-    if (squares.some(item => item === null)) {
+    if (squares.some(item => item === null) && (filterXs(this.state.squares) !== filterXs(squares))) {
       squares = difficulty === 'Easy' ? easyComputerTurn(squares) : hardComputerTurn(squares)
     }
     this.checkTheGameWinner(squares)

@@ -1,3 +1,7 @@
+export const filterXs = squares => {
+    return squares.filter(item => item === 'X').length
+}
+
 export const calculateWinner = (squares) => {
     const lines = [
       [0, 1, 2],
@@ -39,14 +43,13 @@ export const hardComputerTurn = squares => {
             return squares
         }
     } else {
-
         // TOP ROW
         if (squares[0] === squares[1] && squares[0] !== null && squares[2] === null) squares[2] = "O" 
         else if (squares[1] === squares[2] && squares[1] !== null && squares[0] === null) squares[0] = 'O'
         else if (squares[0] === squares[2] && squares[0] !== null && squares[1] === null) squares[1] = 'O'
 
         // MIDDLE ROW
-        else if (squares[3] === squares[4] && squares[3] !== null && squares[5] === null) squares[4] = 'O'
+        else if (squares[3] === squares[4] && squares[3] !== null && squares[5] === null) squares[5] = 'O'
         else if (squares[4] === squares[5] && squares[4] !== null && squares[3] === null) squares[3] = 'O' 
         else if (squares[3] === squares[5] && squares[3] !== null && squares[4] === null) squares[4] = 'O' 
 
@@ -96,9 +99,3 @@ export const hardComputerTurn = squares => {
         return squares
     }
 }
-
-
-// else if (one == nine  && one != "" && five != "" && six == ""){choice = "#mid-right"}
-//       else if (one == nine  && one != "" && five != "" && eight == ""){choice = "#bot-mid"}
-//       else if (three == seven && three != "" && five != "" && four == ""){choice = "#mid-left"}
-//       else if (three == seven && three != "" && five != "" && eight == ""){choice = "#bot-mid"} 
