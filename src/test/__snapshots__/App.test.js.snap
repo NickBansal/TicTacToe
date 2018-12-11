@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Component matches the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          style={null}
+        >
+          <h1>
+            Tic Tac Toe
+          </h1>
+          <h3
+            style={
+              Object {
+                "margin": "20px",
+              }
+            }
+          >
+            Difficulty: 
+            Easy
+          </h3>
+          <Board
+            gameSquares={
+              Array [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+              ]
+            }
+            handleClick={[Function]}
+          />
+          <button
+            onClick={[Function]}
+            value="Easy"
+          >
+            EASY
+          </button>
+          <button
+            onClick={[Function]}
+            value="Hard"
+          >
+            HARD
+          </button>
+        </div>,
+        false,
+      ],
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1>
+              Tic Tac Toe
+            </h1>,
+            <h3
+              style={
+                Object {
+                  "margin": "20px",
+                }
+              }
+            >
+              Difficulty: 
+              Easy
+            </h3>,
+            <Board
+              gameSquares={
+                Array [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                ]
+              }
+              handleClick={[Function]}
+            />,
+            <button
+              onClick={[Function]}
+              value="Easy"
+            >
+              EASY
+            </button>,
+            <button
+              onClick={[Function]}
+              value="Hard"
+            >
+              HARD
+            </button>,
+          ],
+          "style": null,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Tic Tac Toe",
+            },
+            "ref": null,
+            "rendered": "Tic Tac Toe",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Difficulty: ",
+                "Easy",
+              ],
+              "style": Object {
+                "margin": "20px",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              "Difficulty: ",
+              "Easy",
+            ],
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "gameSquares": Array [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+              ],
+              "handleClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "EASY",
+              "onClick": [Function],
+              "value": "Easy",
+            },
+            "ref": null,
+            "rendered": "EASY",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "HARD",
+              "onClick": [Function],
+              "value": "Hard",
+            },
+            "ref": null,
+            "rendered": "HARD",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            style={null}
+          >
+            <h1>
+              Tic Tac Toe
+            </h1>
+            <h3
+              style={
+                Object {
+                  "margin": "20px",
+                }
+              }
+            >
+              Difficulty: 
+              Easy
+            </h3>
+            <Board
+              gameSquares={
+                Array [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                ]
+              }
+              handleClick={[Function]}
+            />
+            <button
+              onClick={[Function]}
+              value="Easy"
+            >
+              EASY
+            </button>
+            <button
+              onClick={[Function]}
+              value="Hard"
+            >
+              HARD
+            </button>
+          </div>,
+          false,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1>
+                Tic Tac Toe
+              </h1>,
+              <h3
+                style={
+                  Object {
+                    "margin": "20px",
+                  }
+                }
+              >
+                Difficulty: 
+                Easy
+              </h3>,
+              <Board
+                gameSquares={
+                  Array [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                  ]
+                }
+                handleClick={[Function]}
+              />,
+              <button
+                onClick={[Function]}
+                value="Easy"
+              >
+                EASY
+              </button>,
+              <button
+                onClick={[Function]}
+                value="Hard"
+              >
+                HARD
+              </button>,
+            ],
+            "style": null,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tic Tac Toe",
+              },
+              "ref": null,
+              "rendered": "Tic Tac Toe",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Difficulty: ",
+                  "Easy",
+                ],
+                "style": Object {
+                  "margin": "20px",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                "Difficulty: ",
+                "Easy",
+              ],
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "gameSquares": Array [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                ],
+                "handleClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "EASY",
+                "onClick": [Function],
+                "value": "Easy",
+              },
+              "ref": null,
+              "rendered": "EASY",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "HARD",
+                "onClick": [Function],
+                "value": "Hard",
+              },
+              "ref": null,
+              "rendered": "HARD",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
