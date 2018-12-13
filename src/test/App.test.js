@@ -9,12 +9,12 @@ describe.only('<App />', () => {
   beforeEach(() => {
     wrapper = shallow(<App />);
   })
+  it('Component matches the snapshot', () => {
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
   it('Testing components within the className of App', () => {
     expect(wrapper.find('div.App').exists()).toBe(true)
     expect(wrapper.find('div.App h1').text()).toBe("Tic Tac Toe")
-  })
-  it('Component matches the snapshot', () => {
-    expect(toJson(wrapper)).toMatchSnapshot()
   })
   it('Reset button resets the game', () => {
     const newInstance = wrapper.instance()
@@ -35,13 +35,19 @@ describe.only('<App />', () => {
     newInstance.handleDifficulty('Hard')
     expect(wrapper.state().difficulty).toBe('Hard')
   })
-  it('CheckTheGameWinner method checks if there is a winner and restes the game', () => {
+  it('CheckTheGameWinner method checks if there is a winner and resets the game', () => {
     expect(wrapper.state().resetGame).toBe(false)
-    const winner1 = ['X', 'X', 'X', null]
+    const winner = ['X', 'X', 'X', null]
     const newInstance = wrapper.instance()
-    newInstance.checkTheGameWinner(winner1)
+    newInstance.checkTheGameWinner(winner)
     expect(wrapper.state().resetGame).toBe(true)
-    wrapper.instance().resetGame()
+    expect(wrapper.find('h1.Winner').exists()).toBe(true)
+    expect(wrapper.find('div#ResetModal').length).toBe(1)
+  })
+  it('CheckTheGameWinner method will not reset game if there is no winner', () => {
+    const winner = ['X', 'X', null, 'X']
+    const newInstance = wrapper.instance()
+    newInstance.checkTheGameWinner(winner)
     expect(wrapper.state().resetGame).toBe(false)
   })
 })
