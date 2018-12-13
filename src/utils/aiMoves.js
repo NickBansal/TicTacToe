@@ -41,10 +41,10 @@ export const aiMoves = squares => {
     
     // EVERYTHING ELSE 
 
-    else if (squares[2] === squares[4] && squares[2] != null && squares[0] === null) squares[0] = 'O'
-    else if (squares[0] === squares[4] && squares[0] != null && squares[2] === null) squares[2] = 'O'
-    else if (squares[8] === squares[4] && squares[8] != null && squares[6] === null) squares[6] = 'O'
-    else if (squares[6] === squares[4] && squares[6] != null && squares[8] === null) squares[8] = 'O'
+    else if (squares[2] === squares[4] && squares[2] !== null && squares[0] === null) squares[0] = 'O'
+    else if (squares[0] === squares[4] && squares[0] !== null && squares[2] === null) squares[2] = 'O'
+    else if (squares[8] === squares[4] && squares[8] !== null && squares[6] === null) squares[6] = 'O'
+    else if (squares[6] === squares[4] && squares[6] !== null && squares[8] === null) squares[8] = 'O'
 
     else if (squares[0] === squares[7] && squares[0] !== null && squares[6] === null) squares[6] = 'O'
     else if (squares[2] === squares[7] && squares[2] !== null && squares[8] === null) squares[8] = 'O'

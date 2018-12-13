@@ -1,28 +1,47 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './setupTest'
 import App from '../TicTacToe';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json'
-
-configure({ adapter: new Adapter() });
 
 describe.only('<App />', () => {
   let wrapper
   beforeEach(() => {
     wrapper = shallow(<App />);
   })
-  it('includes 1 div with the className of App', () => {
+  it('Testing components within the className of App', () => {
     expect(wrapper.find('div.App').exists()).toBe(true)
-  })
-  it('includes 2 divs', () => {
     expect(wrapper.find('div.App h1').text()).toBe("Tic Tac Toe")
   })
   it('Component matches the snapshot', () => {
     expect(toJson(wrapper)).toMatchSnapshot()
   })
-  it('Testing the state components', () => {
-    expect(wrapper.state().squares).toEqual([null, null, null, null, null, null, null, null, null]);
+  it('Reset button resets the game', () => {
+    const newInstance = wrapper.instance()
+    newInstance.resetGame()
+    expect(wrapper.state().squares).toEqual([null, null, null, null, null, null, null, null, null])
+  })
+  it('The handleClick function returns a X value to the square', () => {
+    const newInstance = wrapper.instance()
+    newInstance.handleClick(1)
+    expect(wrapper.state().squares.filter(item => item === 'X').length).toBe(1)
+    newInstance.handleClick(2)
+    expect(wrapper.state().squares.filter(item => item === 'X').length).toBe(2)
+  })
+  it('handleDifficulty method changes the difficulty of the game', () => {
+    const newInstance = wrapper.instance()
+    newInstance.handleDifficulty('Easy')
     expect(wrapper.state().difficulty).toBe('Easy')
+    newInstance.handleDifficulty('Hard')
+    expect(wrapper.state().difficulty).toBe('Hard')
+  })
+  it('CheckTheGameWinner method checks if there is a winner and restes the game', () => {
+    expect(wrapper.state().resetGame).toBe(false)
+    const winner1 = ['X', 'X', 'X', null]
+    const newInstance = wrapper.instance()
+    newInstance.checkTheGameWinner(winner1)
+    expect(wrapper.state().resetGame).toBe(true)
+    wrapper.instance().resetGame()
+    expect(wrapper.state().resetGame).toBe(false)
   })
 })
