@@ -4,7 +4,7 @@ import App from '../TicTacToe';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json'
 
-describe.only('<App />', () => {
+describe('<App />', () => {
   let wrapper
   beforeEach(() => {
     wrapper = shallow(<App />);

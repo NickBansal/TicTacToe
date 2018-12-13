@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Board /> Component matches the snapshot 1`] = `
+<div
+  className="GameBoard"
+>
+  <div
+    className="Box"
+    key="0"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="1"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="2"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="3"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="4"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="5"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="6"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="7"
+    onClick={[Function]}
+  />
+  <div
+    className="Box"
+    key="8"
+    onClick={[Function]}
+  />
+</div>
+`;
