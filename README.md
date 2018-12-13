@@ -10,7 +10,7 @@ All code was created using Javascript in Visual Studio and testing is created wi
 - [x] Check to see if there is a winner 
 - [x] Restart game button when there is a winner
 - [x] Create AI opponent on Easy mode
-= [x] Create AI opponent on Hard mode
+- [x] Create AI opponent on Hard mode
 
 ## Instructions
 Please ensure you have Node.js installed, to check if node is installed please type the follwoing into your terminal.
