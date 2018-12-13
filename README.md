@@ -1,7 +1,7 @@
 # Tic Tac Toe
 This game is made fully in React as a part of a series of games I am creating for portfolio purposes.
 
-All code was done using Javascript in Visual Studio and testing is done with Jest and Enzyme
+All code was created using Javascript in Visual Studio and testing is created with Jest and Enzyme
 
 ## Step-by-step
 - [x] Create a game board to show the cells
@@ -9,8 +9,8 @@ All code was done using Javascript in Visual Studio and testing is done with Jes
 - [x] Change the square to either 'X' or 'O' depending on the player
 - [x] Check to see if there is a winner 
 - [x] Restart game button when there is a winner
-- [x] Updated score 
-- [x] Reset button for the scores
+- [x] Create AI opponent on Easy mode
+= [x] Create AI opponent on Hard mode
 
 ## Instructions
 Please ensure you have Node.js installed, to check if node is installed please type the follwoing into your terminal.
